@@ -14,5 +14,6 @@ jobs:
         with:
           workflow: Receive-inputs
           ref: master
+          inputs: '{"mario" : "oila mario come xe" }' 
           repo: mattedamo/inputs-second
           token: ${{ secrets.PERSONAL_ACCESS }}
