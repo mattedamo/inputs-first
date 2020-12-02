@@ -1,0 +1,18 @@
+name: WorkFlow
+
+on:
+  push:
+    branches: [ master ]
+
+jobs: 
+  trigger-workflow:
+    name: Trigger workflow
+    runs-on: ubuntu-latest
+      steps:
+        - name: Trigger infrastructure repo workflow
+          uses: benc-uk/workflow-dispatch@v1
+          with:
+            workflow: Receive-inputs
+            ref: master
+            repo: mattedamo/inputs-second
+            token: ${{ secrets.PERSONAL_ACCESS }}
